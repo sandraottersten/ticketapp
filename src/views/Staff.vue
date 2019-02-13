@@ -8,8 +8,14 @@
         <section>
           <h1>ok</h1>
         </section>
+        </article>
+        <article class="">
+
         <section>
-          Barcode
+          Barcode number
+        </section>
+        <section>
+          verify button
         </section>
         </article>
         </section>
