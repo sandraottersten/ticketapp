@@ -8,7 +8,7 @@
 .btn {
 width: 100%;
 background: rgb(247, 170, 57);
-height: 3rem;
+height: 3.8rem;
 border-radius: 3px;
 color: white;
 text-decoration: none;

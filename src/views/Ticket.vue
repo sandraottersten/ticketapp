@@ -20,7 +20,7 @@
           <p>Seat</p>
         </section>
         <section class="item7">
-          Barcode
+          90876
         </section>
       </section>
   </main>
@@ -49,8 +49,8 @@
     'menu main main main right right'
     'footer footer footer footer footer footer'
       'foot foot foot foot foot foot';
-  background-color: blue;
-  padding: 10px;
+
+  padding: 2px;
 margin: 100px 20px 40px 20px;
 
 }
@@ -58,15 +58,15 @@ margin: 100px 20px 40px 20px;
 .grid-container > section {
   text-align: center;
   padding: 20px 0;
-  font-size: 30px;
 }
 
-.item3 {
-  border: 5px dotted black
+.item7 {
+ font-family: 'Libre Barcode 128', cursive;
+ font-size: 130px;
 }
 
 #ticket {
-  
+
 
 }
 </style>
