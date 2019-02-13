@@ -1,11 +1,15 @@
 <template>
   <article class="event-item">
-    <section>
-      <h1>{{item.name}}</h1>
-      <p>{{item.startTime}} - {{item.endTime}}</p>
-      <p>{{item.place}} - {{item.city}}</p>
+    <section id="date">
+      {{item.date}} <br> {{item.year}}
     </section>
-    <section>
+    <section class='section'>
+
+      <h2>{{item.name}}</h2>
+      <p id="normal-text">{{item.place}} - {{item.city}}</p>
+      <p>{{item.startTime}}.00 - {{item.endTime}}.00</p>
+    </section>
+    <section id="price">
       {{ item.price }} sek
     </section>
   </article>
@@ -21,23 +25,16 @@
 <style>
   .event-item {
     display: flex;
-    border: 1px solid grey;
-    border-radius: 3px;
+    border-bottom: 1px solid rgb(247, 170, 57);
     padding: .5rem;
     margin-bottom: .125rem;
   }
-    section {
+    .section {
       display: flex;
       flex-direction: column;
       justify-content: center;
       flex: 1;
   }
-        h1 {
-          font-size: 1rem;
-          text-transform: uppercase;
-          margin: 0;
-          flex: 3;
-        }
 
         p {
           padding: 0;
@@ -45,6 +42,22 @@
           color: rgb(0, 0, .6);
           font-size: .8rem;
         }
+  #date {
+    box-sizing: border-box;
+    border: 1px solid rgb(247, 170, 57);
+    padding: 15px 5px 15px 5px;
+    margin-right: 10px;
+    text-align: center;
+    width: 80px;
+    height: 70px;
+  }
+  #normal-text {
+    font-family: arial;
+    font-style: italic;
+  }
+  #price {
+    padding-top: 50px;
+  }
 
 
 

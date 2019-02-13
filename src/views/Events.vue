@@ -1,7 +1,7 @@
 <template>
   <main id= "event">
     <header>
-      <h1>Events</h1>
+      <h1>EVENTS</h1>
     </header>
     <section class="event">
       <event-item v-for="item in events" :key="item.id" :item="item"/>
