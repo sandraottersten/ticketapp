@@ -2,19 +2,19 @@
   <main id="ticket">
     <section class="grid-container">
         <section class="item1">
-          <h1>data</h1>
+          <h1>{{ticket.name}}</h1>
         </section>
         <section class="item2">
-          <h3>Plats</h3>
+          <h3>{{ticket.place}}</h3>
         </section>
         <section class="item3">
           <p>Datum</p>
         </section>
         <section class="item4">
-          <p>Start</p>
+          <p>{{ticket.startTime}}</p>
         </section>
         <section class="item5">
-          <p>Slut</p>
+          <p>{{ticket.endTime}}</p>
         </section>
         <section class="item6">
           <p>Seat</p>
@@ -26,22 +26,21 @@
   </main>
 </template>
 
-<script scoped>
+<script>
   export default {
     name: 'ticket',
     beforeMount() {
-
-            if(localStorage.getItem('activeEvent')){
-              let date = localStorage.getItem('activeEvent');
-              let data = JSON.parse(date);
-              } else {
-              console.error('Det finns ingen data');
+        this.$store.dispatch('checkLocalStorage')
+    },
+    computed: {
+      ticket(){
+      return this.$store.state.ticket
     }
     }
   }
 </script>
 
-<style>
+<style scoped>
 .item1 { grid-area: head; }
 .item2 { grid-area: header; }
 .item3 { grid-area: menu; }
@@ -54,10 +53,10 @@
   display: grid;
   grid-template-areas:
   'head head head head head head'
-    'header header header header header header'
-    'menu main main main right right'
-    'footer footer footer footer footer footer'
-      'foot foot foot foot foot foot';
+  'header header header header header header'
+  'menu main main main right right'
+  'footer footer footer footer footer footer'
+  'foot foot foot foot foot foot';
 grid-gap: 2px;
   padding: 2px;
 margin: 100px 20px 40px 20px;

@@ -13,7 +13,7 @@
       </article>
       <article class="grid-container">
         <section class="pris">
-          {{ this.activeEvent.price }} :-
+          {{ this.activeEvent.price * this.counter }} :-
         </section>
         <section @click="addNumber(1)" class="plus">
           +

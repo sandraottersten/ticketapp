@@ -31,20 +31,32 @@ events: [{
   year: 2019
 }],
 activeEvent: {},
-counter: 0
+counter: 1,
+ticket: {},
 },
-  mutations: {
-    chooseEvent(state, item){
-    state.activeEvent = item;
+mutations: {
+  chooseEvent(state, item){
+  state.activeEvent = item;
 },
 addNumber(state, number){
 state.counter += number;
 },
 removeNumber(state, number){
 state.counter -= number;
+},
+checkLocalStorage(state, tick){
+  state.ticket = tick;
 }
   },
   actions: {
-
+    checkLocalStorage(ctx){
+    if(localStorage.getItem('activeEvent')){
+      let mick = localStorage.getItem('activeEvent');
+      let tick = JSON.parse(mick)
+      ctx.commit('checkLocalStorage', tick);
+      } else {
+      console.error('Det finns ingen data');
+}
+}
   }
 })
