@@ -6,22 +6,22 @@
     <section class="confirm">
       <article>
         <section>
-          <h1>namn</h1>
-          <p>datum och tid</p>
-          <p>plats</p>
+          <h1>name:</h1>
+          <p>{{ this.activeEvent.year }}</p>
+          <p>{{ this.activeEvent.city }}</p>
         </section>
       </article>
       <article class="grid-container">
         <section class="pris">
-          Pris
+          {{ this.activeEvent.price }} :-
         </section>
-        <section class="plus">
+        <section @click="addNumber(1)" class="plus">
           +
         </section>
         <section class="antal">
-          Antal
+          {{counter}}
         </section>
-        <section class="minus">
+        <section @click="removeNumber(1)" class="minus">
           -
         </section>
         </article>
@@ -36,14 +36,27 @@
   export default {
     name: 'confirm',
     computed: {
-      events(){
-        return this.$store.state.events;
+      activeEvent(){
+        return this.$store.state.activeEvent;
+
+      },
+      counter(){
+        return this.$store.state.counter;
+
+      }
+    },
+    methods: {
+      addNumber(number){
+        this.$store.commit('addNumber', number);
+      },
+      removeNumber(number){
+        this.$store.commit('removeNumber', number);
       }
     }
   }
 </script>
 
-<style>
+<style scoped>
   .confirm {
     text-align: center;
     margin: 30px;

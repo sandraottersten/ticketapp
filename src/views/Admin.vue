@@ -30,7 +30,7 @@
         <input type="text" name="" value="To time">
         <input type="text" name="" value="#Seats">
       </section>
-      <a href="#" class="btn" @click="">Add the event</a>
+      <a href="#" class="btn">Add the event</a>
     </article>
   </main>
 </template>
@@ -41,7 +41,7 @@
   }
 </script>
 
-<style media="screen">
+<style scoped>
   table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -63,13 +63,13 @@
 
   .addevent {
 
-    background-color: pink;
+    background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
 
   }
   .table {
     margin: 0 auto;
-    background-color: lightblue;
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 10px;
   }
   .input-container {
@@ -78,5 +78,10 @@
   }
   #admin {
     padding: 30px;
+  }
+  input {
+    margin: 10px 0px 10px;
+    padding: 10px;
+    height: 20px;
   }
 </style>

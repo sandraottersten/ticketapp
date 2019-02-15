@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex)
 
@@ -28,10 +29,20 @@ events: [{
   price: 599,
   seats: 600,
   year: 2019
-}]}
-  ,
+}],
+activeEvent: {},
+counter: 0
+},
   mutations: {
-
+    chooseEvent(state, item){
+    state.activeEvent = item;
+},
+addNumber(state, number){
+state.counter += number;
+},
+removeNumber(state, number){
+state.counter -= number;
+}
   },
   actions: {
 

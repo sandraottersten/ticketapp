@@ -1,10 +1,9 @@
 <template>
-  <article class="event-item">
+  <article class="event-item" @click="chooseEvent(item)">
     <section id="date">
       {{item.date}} <br> {{item.year}}
     </section>
     <section class='section'>
-
       <h2>{{item.name}}</h2>
       <p id="normal-text">{{item.place}} - {{item.city}}</p>
       <p>{{item.startTime}}.00 - {{item.endTime}}.00</p>
@@ -18,7 +17,13 @@
 <script type="text/javascript">
   export default {
       name: 'event-item',
-      props: ['item']
+      props: ['item'],
+      methods: {
+        chooseEvent(item){
+          this.$store.commit('chooseEvent', item);
+          console.log('hej')
+        }
+      }
         }
 </script>
 
@@ -29,19 +34,22 @@
     padding: .5rem;
     margin-bottom: .125rem;
   }
-    .section {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex: 1;
-  }
 
-        p {
-          padding: 0;
-          margin: 0;
-          color: rgb(0, 0, .6);
-          font-size: .8rem;
-        }
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+  .event-item:focus {
+    background-color: grey;
+  }
+  p {
+    padding: 0;
+    margin: 0;
+    color: rgb(0, 0, .6);
+    font-size: .8rem;
+  }
   #date {
     box-sizing: border-box;
     border: 1px solid rgb(247, 170, 57);

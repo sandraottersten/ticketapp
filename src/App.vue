@@ -19,8 +19,11 @@ justify-content: center;
 align-items: center;
 margin-top: 30px;
 }
+.btn:active {
+  background: grey;
+}
 body {
-background-color: rgb(255, 239, 165);
+background-color: rgba(255, 230, 132, 1);
 font-family: 'Raleway', sans-serif;
 }
 h1 {

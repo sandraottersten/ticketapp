@@ -2,7 +2,7 @@
   <main id="ticket">
     <section class="grid-container">
         <section class="item1">
-          <h1>namn</h1>
+          <h1>data</h1>
         </section>
         <section class="item2">
           <h3>Plats</h3>
@@ -20,15 +20,24 @@
           <p>Seat</p>
         </section>
         <section class="item7">
-          90876
+          <p id="barcode-font">90876</p>
         </section>
       </section>
   </main>
 </template>
 
-<script>
+<script scoped>
   export default {
-    name: 'ticket'
+    name: 'ticket',
+    beforeMount() {
+
+            if(localStorage.getItem('activeEvent')){
+              let date = localStorage.getItem('activeEvent');
+              let data = JSON.parse(date);
+              } else {
+              console.error('Det finns ingen data');
+    }
+    }
   }
 </script>
 
@@ -49,13 +58,14 @@
     'menu main main main right right'
     'footer footer footer footer footer footer'
       'foot foot foot foot foot foot';
-
+grid-gap: 2px;
   padding: 2px;
 margin: 100px 20px 40px 20px;
 
 }
 
 .grid-container > section {
+  background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px 0;
 }
@@ -63,10 +73,12 @@ margin: 100px 20px 40px 20px;
 .item7 {
  font-family: 'Libre Barcode 128', cursive;
  font-size: 130px;
+ padding-top: 20px;
 }
 
-#ticket {
-
+#barcode-font {
+margin:20px;
+padding-top: 50px;
 
 }
 </style>

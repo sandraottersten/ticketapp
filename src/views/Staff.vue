@@ -28,6 +28,6 @@
   }
 </script>
 
-<style media="screen">
+<style scoped>
 
 </style>

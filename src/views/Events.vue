@@ -5,7 +5,7 @@
     </header>
     <section class="event">
       <event-item v-for="item in events" :key="item.id" :item="item"/>
-      <a href="#" class="btn" @click="$router.push('/confirm')">Done</a>
+      <a href="#" class="btn" @click="saveTicket">Done</a>
     </section>
   </main>
 </template>
@@ -21,11 +21,22 @@ export default {
     computed: {
       events(){
         return this.$store.state.events;
+      },
+      activeEvent(){
+        return this.$store.state.activeEvent;
       }
+    },
+    methods: {
+      saveTicket(){
+        JSON.stringify(this.activeEvent);
+        //console.log(this.activeEvent);
+        localStorage.setItem('activeEvent', JSON.stringify(this.activeEvent));
+        this.$router.push('/confirm')
+  }
     }
   }
 </script>
 
-<style>
+<style scoped>
 
 </style>
