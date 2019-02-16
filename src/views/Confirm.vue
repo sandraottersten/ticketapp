@@ -6,7 +6,7 @@
     <section class="confirm">
       <article>
         <section>
-          <h1>name:</h1>
+          <h1>{{activeEvent.name}}</h1>
           <p>{{ this.activeEvent.year }}</p>
           <p>{{ this.activeEvent.city }}</p>
         </section>

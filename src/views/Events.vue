@@ -3,6 +3,9 @@
     <header>
       <h1>EVENTS</h1>
     </header>
+    <section>
+      <input type="text" name="" value="Search event">
+    </section>
     <section class="event">
       <event-item v-for="item in events" :key="item.id" :item="item"/>
       <a href="#" class="btn" @click="saveTicket">Done</a>

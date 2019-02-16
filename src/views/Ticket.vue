@@ -8,7 +8,7 @@
           <h3>{{ticket.place}}</h3>
         </section>
         <section class="item3">
-          <p>Datum</p>
+          <p>{{ticket.date}}</p>
         </section>
         <section class="item4">
           <p>{{ticket.startTime}}</p>
