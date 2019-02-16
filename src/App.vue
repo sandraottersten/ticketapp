@@ -7,9 +7,9 @@
 <script>
   export default {
     name: 'App',
-  /*  beforeMount(){
+    beforeMount(){
       this.$store.dispatch('getEvents')
-    }*/
+    }
   }
 
 </script>

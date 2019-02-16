@@ -1,12 +1,12 @@
 <template>
   <article class="event-item" @click="chooseEvent(item)">
     <section id="date">
-      {{item.date}} <br> {{item.year}}
+      {{item.when.date}} <br> {{item.when.year}}
     </section>
     <section class='section'>
       <h2>{{item.name}}</h2>
-      <p id="normal-text">{{item.place}} - {{item.city}}</p>
-      <p>{{item.startTime}}.00 - {{item.endTime}}.00</p>
+      <p id="normal-text">{{item.where.place}} - {{item.where.city}}</p>
+      <p>{{item.when.start}} - {{item.when.end}}</p>
     </section>
     <section id="price">
       {{ item.price }} sek

@@ -5,16 +5,16 @@
           <h1>{{ticket.name}}</h1>
         </section>
         <section class="item2">
-          <h3>{{ticket.place}}</h3>
+          <h3>{{ticket.where.place}}</h3>
         </section>
         <section class="item3">
-          <p>{{ticket.date}}</p>
+          <p>{{ticket.when.date}}</p>
         </section>
         <section class="item4">
-          <p>{{ticket.startTime}}</p>
+          <p>{{ticket.when.start}}</p>
         </section>
         <section class="item5">
-          <p>{{ticket.endTime}}</p>
+          <p>{{ticket.when.end}}</p>
         </section>
         <section class="item6">
           <p>Seat</p>

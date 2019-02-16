@@ -7,8 +7,8 @@
       <article>
         <section>
           <h1>{{activeEvent.name}}</h1>
-          <p>{{ this.activeEvent.year }}</p>
-          <p>{{ this.activeEvent.city }}</p>
+          <p>{{ activeEvent.when.year }}</p>
+          <p>{{ activeEvent.where.city }}</p>
         </section>
       </article>
       <article class="grid-container">

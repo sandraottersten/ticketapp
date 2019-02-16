@@ -41,5 +41,8 @@ export default {
 </script>
 
 <style scoped>
-
+  input {
+    height: 30px;
+    width: 200px;
+  }
 </style>

@@ -7,26 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
 
-events: [
-  {
-    name: "laleh",
-    price: 699,
-    place: "globen",
-    city: "stockholm",
-    startTime: 20,
-    endTime: 22,
-    date: "20 jan"
-},
-{
-  name: "cher",
-  price: 699,
-  place: "ullevi",
-  city: "göteborg",
-  startTime: 20,
-  endTime: 22,
-  date: "8 okt"
-}
-],
+events: [],
 activeEvent: {},
 counter: 1,
 ticket: {},
@@ -44,11 +25,11 @@ state.counter -= number;
 checkLocalStorage(state, tick){
   state.ticket = tick;
 },
-/*
+
 setEvents(state, events){
   state.events = events;
 }
-*/
+
   },
   actions: {
     checkLocalStorage(ctx){
@@ -59,11 +40,11 @@ setEvents(state, events){
       } else {
       console.error('Det finns ingen data');
 }
-}/*,
+},
 async getEvents(ctx){
   let events = await axios.get('http://localhost:3000/events');
-  console.log(events)
+  console.log(events.data)
   ctx.commit('setEvents', events.data);
-}*/
+}
   }
 })
