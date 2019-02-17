@@ -1,13 +1,14 @@
 <template>
   <main id="confirm">
     <header>
-      <h3>You're about to score tickets to</h3>
+      <h1>BEET IT</h1>
     </header>
     <section class="confirm">
       <article>
         <section>
-          <h1>{{activeEvent.name}}</h1>
-          <p>{{ activeEvent.when.year }}</p>
+          <h2>{{activeEvent.name}}</h2>
+          <h4>{{ activeEvent.when.date }} {{ activeEvent.when.year }}</h4>
+          <p>{{ activeEvent.where.place }}</p>
           <p>{{ activeEvent.where.city }}</p>
         </section>
       </article>
@@ -25,9 +26,9 @@
           -
         </section>
         </article>
-          <a href="#" class="btn" @click="$router.push('/ticket')">Take my money</a>
-        </section>
 
+        </section>
+        <a href="#" class="btn" @click="$router.push('/ticket')">Take my money</a>
 
   </main>
 </template>
@@ -59,9 +60,13 @@
 <style scoped>
   .confirm {
     text-align: center;
-    margin: 30px;
+    margin: 0px 25px 25px;
+    background-color: white;
   }
-
+  #confirm {
+    display: flex;
+    flex-direction: column;
+  }
   .pris {
     grid-area: header;
     height: 50px;
@@ -79,7 +84,7 @@
    ;
     grid-gap: 2px;
     padding: 10px;
-    margin-top: 100px;
+    margin: 60px 30px 50px;
   }
 
   .grid-container > section {
@@ -87,9 +92,26 @@
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
+    border: 3px solid rgb(232, 74, 116);
   }
-h3 {
+h1 {
   text-align: center;
-  margin-top: 60px;
+  margin: 0;
+  background-color: rgb(34, 155, 84);
+  padding: 25px;
+}
+h2 {
+  color: black;
+  margin: 30px 0px 30px;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(232, 74, 116);
+}
+p {
+  margin: 0;
+  font-style: italic;
 }
 </style>

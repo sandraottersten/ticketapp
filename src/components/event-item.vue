@@ -4,7 +4,7 @@
       {{item.when.date}} <br> {{item.when.year}}
     </section>
     <section class='section'>
-      <h2>{{item.name}}</h2>
+      <h3>{{item.name}}</h3>
       <p id="normal-text">{{item.where.place}} - {{item.where.city}}</p>
       <p>{{item.when.start}} - {{item.when.end}}</p>
     </section>
@@ -21,20 +21,21 @@
       methods: {
         chooseEvent(item){
           this.$store.commit('chooseEvent', item);
-          console.log('hej')
         }
       }
         }
 </script>
 
-<style>
+<style scoped>
   .event-item {
     display: flex;
-    border-bottom: 1px solid rgb(247, 170, 57);
+    border-bottom: 1px solid gray;
     padding: .5rem;
     margin-bottom: .125rem;
   }
-
+  .event-item:active {
+    background-color: gray;
+  }
   .section {
     display: flex;
     flex-direction: column;
@@ -52,20 +53,27 @@
   }
   #date {
     box-sizing: border-box;
-    border: 1px solid rgb(247, 170, 57);
-    padding: 15px 5px 15px 5px;
+    border: 1px solid gray;
+    padding: 10px 5px 15px 5px;
     margin-right: 10px;
     text-align: center;
-    width: 80px;
-    height: 70px;
+    width: 70px;
+    height: 60px;
   }
   #normal-text {
     font-family: arial;
     font-style: italic;
   }
   #price {
-    padding-top: 50px;
+    padding-top: 45px;
   }
+  h3 {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    font-size: 1rem;
+  }
+
 
 
 

@@ -3,13 +3,13 @@
     <header>
       <h1>EVENTS</h1>
     </header>
-    <section>
-      <input type="text" name="" value="Search event">
+    <section id="input">
+      <input type="text" name="search" placeholder="filter">
     </section>
-    <section class="event">
+    <section class="event scrolling-box">
       <event-item v-for="item in events" :key="item.id" :item="item"/>
-      <a href="#" class="btn" @click="saveTicket">Done</a>
     </section>
+    <a href="#" class="btn" @click="saveTicket">Done</a>
   </main>
 </template>
 
@@ -42,7 +42,43 @@ export default {
 
 <style scoped>
   input {
-    height: 30px;
-    width: 200px;
+    height: 1.8rem;
+    width: 20rem;
+    margin: .8rem;
+    border-radius: 3px;
+    border: none;
+    font-size: 1.2rem;
+    padding: .5rem;
+  }
+  input:focus {
+    outline: none;
+  }
+  #event {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+  }
+  .event {
+    margin: 0 20px;
+  }
+  .scrolling-box {
+    display: block;
+    overflow-y: scroll;
+    height: 440px;
+  }
+  header {
+    background-color: rgb(34, 155, 84);
+  }
+  #input {
+    background-color: rgb(48, 180, 92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  h1 {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 20px;
+
   }
 </style>
