@@ -70,6 +70,7 @@
     display: flex;
     flex-direction: column;
     background-color: white;
+    height: 100vh;
   }
   .pris {
     grid-area: header;

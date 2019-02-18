@@ -86,7 +86,7 @@
     display: inline-block;
   }
   #admin {
-
+    height: 100vh;
   }
   input {
     margin: 10px 0px 10px;

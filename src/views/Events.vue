@@ -4,7 +4,7 @@
       <h1>EVENTS</h1>
     </header>
     <section id="input">
-      <input type="text" v-model="search" placeholder="filter">
+      <input type="text" v-model="search" placeholder="find event">
     </section>
     <section class="event scrolling-box">
       <event-item v-for="item in filteredEvents" :key="item.id" :item="item"/>
@@ -55,6 +55,7 @@ export default {
     background-color: white;
     display: flex;
     flex-direction: column;
+    height: 100vh;
   }
   .event {
     margin: 0 20px;
