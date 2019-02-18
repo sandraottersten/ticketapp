@@ -21,6 +21,7 @@
       methods: {
         chooseEvent(item){
           this.$store.commit('chooseEvent', item);
+          this.$router.push('/confirm')
         }
       }
         }
@@ -53,12 +54,13 @@
   }
   #date {
     box-sizing: border-box;
-    border: 1px solid gray;
+    border: 1px solid rgb(200, 33, 15);
     padding: 10px 5px 15px 5px;
     margin-right: 10px;
     text-align: center;
     width: 70px;
     height: 60px;
+    color: rgb(200, 33, 15);
   }
   #normal-text {
     font-family: arial;

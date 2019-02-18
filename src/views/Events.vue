@@ -4,12 +4,11 @@
       <h1>EVENTS</h1>
     </header>
     <section id="input">
-      <input type="text" name="search" placeholder="filter">
+      <input type="text" v-model="search" placeholder="filter">
     </section>
     <section class="event scrolling-box">
-      <event-item v-for="item in events" :key="item.id" :item="item"/>
+      <event-item v-for="item in filteredEvents" :key="item.id" :item="item"/>
     </section>
-    <a href="#" class="btn" @click="saveTicket">Done</a>
   </main>
 </template>
 
@@ -18,6 +17,11 @@ import eventItem from '@/components/event-item';
 
 export default {
     name: 'events',
+    data(){
+      return {
+        search: ""
+      }
+    },
     components: {
       eventItem
     },
@@ -25,25 +29,19 @@ export default {
       events(){
         return this.$store.state.events;
       },
-      activeEvent(){
-        return this.$store.state.activeEvent;
+      filteredEvents(){
+        return this.events.filter((event) => {
+          return event.name.match(this.search);
+        })
       }
-    },
-    methods: {
-      saveTicket(){
-        JSON.stringify(this.activeEvent);
-        //console.log(this.activeEvent);
-        localStorage.setItem('activeEvent', JSON.stringify(this.activeEvent));
-        this.$router.push('/confirm')
-  }
     }
   }
 </script>
 
 <style scoped>
   input {
-    height: 1.8rem;
-    width: 20rem;
+    height: 1.5rem;
+    width: 19rem;
     margin: .8rem;
     border-radius: 3px;
     border: none;
@@ -64,13 +62,13 @@ export default {
   .scrolling-box {
     display: block;
     overflow-y: scroll;
-    height: 440px;
+    height: 500px;
   }
   header {
-    background-color: rgb(34, 155, 84);
+    background-color: rgb(254, 113, 33);
   }
   #input {
-    background-color: rgb(48, 180, 92);
+    background-color: lightgray;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -17,7 +17,7 @@
 <style>
 .btn {
 width: 100%;
-background: rgb(232, 74, 116);
+background: rgb(231, 46, 18);
 height: 3.8rem;
 border-radius: 3px;
 color: white;
@@ -33,8 +33,9 @@ align-items: center;
   background: grey;
 }
 body {
-background-image: url('assets/stripes.png');
+background-image: url('assets/background.jpg');
 background-size: cover;
+background-position: center;
 font-family: arial;
 margin: 0;
 height: 100vh;

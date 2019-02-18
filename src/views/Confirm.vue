@@ -1,7 +1,7 @@
 <template>
   <main id="confirm">
     <header>
-      <h1>BEET IT</h1>
+      <h1>BUY</h1>
     </header>
     <section class="confirm">
       <article>
@@ -14,21 +14,21 @@
       </article>
       <article class="grid-container">
         <section class="pris">
-          {{ this.activeEvent.price * this.counter }} :-
-        </section>
-        <section @click="addNumber(1)" class="plus">
-          +
-        </section>
-        <section class="antal">
-          {{counter}}
+          {{ this.activeEvent.price * this.counter }}:-
         </section>
         <section @click="removeNumber(1)" class="minus">
           -
         </section>
+        <section class="antal">
+          {{counter}}
+        </section>
+        <section @click="addNumber(1)" class="plus">
+          +
+        </section>
         </article>
 
         </section>
-        <a href="#" class="btn" @click="$router.push('/ticket')">Take my money</a>
+        <a href="#" class="btn" @click="buy">Take my money</a>
 
   </main>
 </template>
@@ -39,7 +39,6 @@
     computed: {
       activeEvent(){
         return this.$store.state.activeEvent;
-
       },
       counter(){
         return this.$store.state.counter;
@@ -47,6 +46,10 @@
       }
     },
     methods: {
+      buy(){
+      this.$store.dispatch('buy', { event: this.activeEvent._id, amount: this.counter });
+      this.$router.push('/tickets');
+    },
       addNumber(number){
         this.$store.commit('addNumber', number);
       },
@@ -60,55 +63,58 @@
 <style scoped>
   .confirm {
     text-align: center;
-    margin: 0px 25px 25px;
+    margin: 0px 0px 0px;
     background-color: white;
   }
   #confirm {
     display: flex;
     flex-direction: column;
+    background-color: white;
   }
   .pris {
     grid-area: header;
-    height: 50px;
   }
-  .plus { grid-area: menu; }
+  .plus { grid-area: right;}
   .antal { grid-area: main; }
-  .minus { grid-area: right; }
+  .minus { grid-area: left; }
 
 
   .grid-container {
     display: grid;
     grid-template-areas:
       'header header header header header header'
-      'menu menu main main right right'
+      'left left main main right right'
    ;
     grid-gap: 2px;
-    padding: 10px;
-    margin: 60px 30px 50px;
+
+    margin: 50px 0px 0px;
+    widht: 100%;
+    background-image: url('../assets/background.jpg');
+    background-size: 100%;
   }
 
   .grid-container > section {
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-    border: 3px solid rgb(232, 74, 116);
+    padding: 40px 0;
+    font-size: 40px;
+
   }
 h1 {
   text-align: center;
   margin: 0;
-  background-color: rgb(34, 155, 84);
-  padding: 25px;
+  background-color: rgb(254, 113, 33);
+  padding: 20px;
 }
 h2 {
   color: black;
-  margin: 30px 0px 30px;
+  margin: 50px 0px 30px;
   font-size: 2rem;
   text-transform: uppercase;
 }
 h4 {
   font-family: 'Montserrat', sans-serif;
-  color: rgb(232, 74, 116);
+  color: gray;
 }
 p {
   margin: 0;

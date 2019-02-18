@@ -9,39 +9,39 @@ export default new Vuex.Store({
     events: [],
     activeEvent: {},
     counter: 1,
-    ticket: {},
+    tickets: [],
   },
 mutations: {
   chooseEvent(state, item){
     state.activeEvent = item;
   },
+  setTickets(state, tickets){
+    state.tickets = tickets;
+},
   addNumber(state, number){
     state.counter += number;
   },
   removeNumber(state, number){
     state.counter -= number;
   },
-  checkLocalStorage(state, tick){
-    state.ticket = tick;
-  },
   setEvents(state, events){
     state.events = events;
   }
 },
 actions: {
-  checkLocalStorage(ctx){
-  if(localStorage.getItem('activeEvent')){
-    let mick = localStorage.getItem('activeEvent');
-    let tick = JSON.parse(mick)
-    ctx.commit('checkLocalStorage', tick);
-    } else {
-    console.error('Det finns ingen data');
-    }
-  },
+  async buy(ctx, buyData){
+    let tickets = await axios.post('http://localhost:3000/tickets', buyData);
+    ctx.commit('setTickets', tickets.data);
+    localStorage.setItem('tickets', JSON.stringify(tickets.data));
+
+},
 async getEvents(ctx){
   let events = await axios.get('http://localhost:3000/events');
-  console.log(events.data)
   ctx.commit('setEvents', events.data);
-  }
+},
+getTickets(ctx){
+    let tickets = localStorage.getItem('tickets');
+    ctx.commit('setTickets', JSON.parse(tickets));
+}
 }
 })
