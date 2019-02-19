@@ -23,7 +23,7 @@ mutations: {
   addNumber(state, number){
     state.counter += number;
   },
-  removeNumber(state, number){
+  setNumber(state, number){
     state.counter -= number;
   },
   setEvents(state, events){
@@ -51,6 +51,11 @@ actions: {
   async verifyTicket(ctx, code){
     let verification = await axios.get(`http://localhost:3000/verify/${code}`);
     ctx.commit('setVerifyData', verification.data);
+  },
+  removeNumber(ctx, number){
+    if(this.state.counter>1){
+      ctx.commit('setNumber', number);
+    }
   }
 }
 })

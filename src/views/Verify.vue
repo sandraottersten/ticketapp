@@ -43,7 +43,7 @@ export default {
 },
   methods: {
     async verifyTicket(){
-          let hh = await this.$store.dispatch('verifyTicket', this.code);
+          await this.$store.dispatch('verifyTicket', this.code);
           if(this.verification == "Ticket is valid"){
             this.verify = true
           }else{

@@ -1,6 +1,6 @@
 <template>
-  <main id="tickets">
-      <ticket v-for="(ticket, index) in tickets" :key="index" :ticket="ticket" />
+  <main class="tickets squares">
+      <ticket class="tick" v-for="(ticket, index) in tickets" :key="index" :ticket="ticket" />
   </main>
 </template>
 
@@ -28,9 +28,5 @@ export default {
 
 <style scoped>
 
-#tickets {
-display: flex;
-align-items: center;
-justify-content: center;
-}
+
 </style>

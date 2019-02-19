@@ -54,7 +54,7 @@
         this.$store.commit('addNumber', number);
       },
       removeNumber(number){
-        this.$store.commit('removeNumber', number);
+        this.$store.dispatch('removeNumber', number);
       }
     }
   }

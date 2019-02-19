@@ -3,7 +3,7 @@
     <header>
       <h1>ADMIN</h1>
     </header>
-    <article class="table fixed_header">
+    <section class="table fixed_header">
       <table>
         <thead>
         <tr>
@@ -14,7 +14,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="event in events" :key="event.id">
+        <tr v-for="event in events" :key="event._id">
           <td>{{event.name }}</td>
           <td>{{event.where.place }}</td>
           <td>{{event.when.date }}</td>
@@ -22,19 +22,21 @@
         </tr>
         </tbody>
       </table>
-    </article>
+    </section>
 
     <article class="addevent">
       <h2>Add event</h2>
       <section class="input-container">
-        <input type="text" name="" placeholder="Name">
-        <input type="text" name="" placeholder="Where">
-        <input type="text" name="" placeholder="Date">
-        <input type="text" name="" placeholder="From time">
-        <input type="text" name="" placeholder="To time">
-        <input type="text" name="" placeholder="#Seats">
+        <input type="text" name="name" placeholder="Name" v-model="newEvent.name">
+        <input type="text" name="place" placeholder="Place" v-model="newEvent.where.place">
+        <input type="text" name="city" placeholder="City" v-model="newEvent.where.city">
+        <input type="text" name="date" placeholder="Date" v-model="newEvent.when.date">
+        <input type="number" name="year" placeholder="Year" v-model="newEvent.when.year">
+        <input type="text" name="start" placeholder="From" v-model="newEvent.when.from">
+        <input type="text" name="stop" placeholder="To" v-model="newEvent.when.to">
+        <input type="number" name="tickets" placeholder="Tickets" v-model="newEvent.tickets.available">
       </section>
-      <a href="#" class="btn">Add the event</a>
+      <a href="#" class="btn" @click="createEvent">Add the event</a>
     </article>
   </main>
 </template>
@@ -42,15 +44,48 @@
 <script>
   export default {
     name: 'admin',
+    data() {
+      return {
+        newEvent:{
+        name:"",
+        where: {
+          place: "",
+          city: ""
+        },
+        when: {
+          year: Number,
+          date: "",
+          from: "",
+          to: ""
+        },
+        price: Number,
+        tickets: {
+          available: Number,
+          sold: 0
+        }
+      }
+    }
+    },
     computed: {
       events(){
         return this.$store.state.events
+      }
+    },
+    methods: {
+      async createEvent() {
+        let newEvent = this.newEvent
+        let resp = await this.$http.post('http://localhost:3000/events', newEvent);
+        this.$store.dispatch('getEvents');
       }
     }
   }
 </script>
 
 <style scoped>
+  #admin {
+    height: 100vh;
+  }
+
   table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -85,9 +120,7 @@
     margin: 0 auto;
     display: inline-block;
   }
-  #admin {
-    height: 100vh;
-  }
+
   input {
     margin: 10px 0px 10px;
     padding: 10px;
