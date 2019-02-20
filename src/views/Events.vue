@@ -63,7 +63,7 @@ export default {
   .scrolling-box {
     display: block;
     overflow-y: scroll;
-    height: 500px;
+    height: 510px;
   }
   header {
     background-color: rgb(254, 113, 33);

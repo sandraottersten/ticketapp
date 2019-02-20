@@ -37,7 +37,7 @@
 
 <style scoped>
   #ticket {
-    width: 100%;
+    margin: 2rem;
   }
 .item1 { grid-area: name; }
 .item2 { grid-area: where; }
@@ -57,8 +57,6 @@
   'barcode barcode barcode barcode barcode barcode';
 grid-gap: 2px;
   padding: 2px;
-margin: 100px 20px 40px 20px;
-
 }
 
 .grid-container > section {

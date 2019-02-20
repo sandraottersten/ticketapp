@@ -26,10 +26,8 @@
           +
         </section>
         </article>
-
         </section>
         <a href="#" class="btn" @click="buy">Take my money</a>
-
   </main>
 </template>
 
@@ -65,12 +63,14 @@
     text-align: center;
     margin: 0px 0px 0px;
     background-color: white;
+
   }
   #confirm {
     display: flex;
     flex-direction: column;
     background-color: white;
     height: 100vh;
+    justify-content: flex-end;
   }
   .pris {
     grid-area: header;
@@ -88,7 +88,7 @@
    ;
     grid-gap: 2px;
 
-    margin: 50px 0px 0px;
+    margin: 70px 0px 0px;
     widht: 100%;
     background-image: url('../assets/background.jpg');
     background-size: 100%;
@@ -101,10 +101,12 @@
     font-size: 40px;
 
   }
+  header {
+    background-color: rgb(254, 113, 33);
+  }
 h1 {
   text-align: center;
   margin: 0;
-  background-color: rgb(254, 113, 33);
   padding: 20px;
 }
 h2 {

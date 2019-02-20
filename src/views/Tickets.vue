@@ -1,5 +1,5 @@
 <template>
-  <main class="tickets squares">
+  <main class="tickets">
       <ticket class="tick" v-for="(ticket, index) in tickets" :key="index" :ticket="ticket" />
   </main>
 </template>
@@ -27,6 +27,21 @@ export default {
 </script>
 
 <style scoped>
+#app {
 
+}
+ .tickets {
+   display: flex;
+   padding-top: 3rem;
+   overflow-x: scroll;
+   align-items: center;
+ }
+ body {
+   margin: 0;
+ }
+ .tick {
+   min-width: 21rem;
+   width: 100vw;
+ }
 
 </style>

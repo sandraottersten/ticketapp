@@ -10,18 +10,12 @@
         <section class="form" v-show="show">
             <img v-if="verify==true" src="../assets/thumbsup.png" alt="thumb up">
             <img v-if="verify==false" src="../assets/thumbsdown.png" alt="thumb up">
-
         </section>
-<div class="hej">
-
-
-        <input type="text" name="code" placeholder="Write code here":value="code.toUpperCase()" @input="code = $event.target.value.toUpperCase()" :maxlength="codeLength" />
-
-        <a href="#" class="btn" @click="verifyTicket">Verify code</a>
+        <div class="hej">
+          <input type="text" name="code" placeholder="Write code here":value="code.toUpperCase()" @input="code = $event.target.value.toUpperCase()" :maxlength="codeLength" />
+          <a href="#" class="btn" @click="verifyTicket">Verify code</a>
         </div>
-
-  </section>
-
+     </section>
   </main>
 </template>
 
@@ -51,7 +45,7 @@ export default {
           }
           this.show = true;
           console.log(this.verify)
-          console.log(this.verification)
+          console.log(this.verification.verified)
       }
    }
 }

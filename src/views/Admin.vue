@@ -25,8 +25,8 @@
     </section>
 
     <article class="addevent">
-      <h2>Add event</h2>
       <section class="input-container">
+        <h2>New event</h2>
         <input type="text" name="name" placeholder="Name" v-model="newEvent.name">
         <input type="text" name="place" placeholder="Place" v-model="newEvent.where.place">
         <input type="text" name="city" placeholder="City" v-model="newEvent.where.city">
@@ -84,6 +84,10 @@
 <style scoped>
   #admin {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: flex-end;
   }
 
   table {
@@ -109,6 +113,7 @@
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 
+
   }
   .table {
     margin: 0 auto;
@@ -119,10 +124,12 @@
   .input-container {
     margin: 0 auto;
     display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   input {
-    margin: 10px 0px 10px;
+    margin: 8px 8px 8px;
     padding: 10px;
     height: 20px;
   }
