@@ -89,7 +89,7 @@ export default {
   }
   .form {
     width: 100vw;
-    height: 20rem;
+    height: 21rem;
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -97,7 +97,6 @@ export default {
   }
   input {
     height: 5rem;
-    padding: .5rem;
     font-size: 1.5rem;
     letter-spacing: .25rem;
     text-align: center;

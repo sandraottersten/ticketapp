@@ -37,7 +37,9 @@
         <input type="number" name="tickets" placeholder="Tickets" v-model="newEvent.tickets.available">
       </section>
       <a href="#" class="btn" @click="createEvent">Add the event</a>
+
     </article>
+
   </main>
 </template>
 
@@ -88,16 +90,22 @@
     flex-direction: column;
     background-color: white;
     justify-content: flex-end;
+    background-image: url('../assets/background.jpg');
+    background-size: cover;
+
   }
 
   table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    margin: 0 auto;
   }
 
   td, th {
     text-align: left;
+  }
+  tr {
+    height: 2.5rem;
   }
 
   th {
@@ -108,24 +116,29 @@
     border-bottom: 1px solid black;
   }
   .addevent {
-    background-image: url('../assets/background.jpg');
+    background: rgba(255, 255, 255, 0.5);
     background-size: 100%;
-    text-align: center;
     font-family: 'Montserrat', sans-serif;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 2;
 
 
   }
   .table {
-    margin: 0 auto;
     background-color: rgba(255, 255, 255);
-    padding: 10px;
+    padding: 10px 30px;
     font-family: 'Montserrat', sans-serif;
+    flex: 1;
+
   }
   .input-container {
-    margin: 0 auto;
-    display: inline-block;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-bottom: 2rem;
+    text-align: center;
   }
 
   input {
@@ -150,7 +163,7 @@
     display:block;
     width: 100%;
     overflow: auto;
-    height: 200px;
+    height: 250px;
   }
 
   .fixed_header thead tr {
@@ -161,5 +174,8 @@
     padding: 5px;
     text-align: left;
     width: 200px;
+  }
+  .btn {
+    width: 300px;
   }
 </style>
