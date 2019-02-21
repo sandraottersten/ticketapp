@@ -4,7 +4,8 @@
       {{item.when.date}} <br> {{item.when.year}}
     </section>
     <section class='section'>
-      <h3>{{item.name}}</h3>
+      <h3>{{item.name}} <span id="soldout" v-show="show">SOLD OUT!</span></h3>
+
       <p id="normal-text">{{item.where.place}} - {{item.where.city}}</p>
       <p>{{item.when.start}} - {{item.when.end}}</p>
     </section>
@@ -18,6 +19,13 @@
   export default {
       name: 'event-item',
       props: ['item'],
+      computed: {
+        show(){
+        if(this.item.tickets.available-this.item.tickets.sold==0){
+        return true
+      } else {return false}
+    }
+      },
       methods: {
         chooseEvent(item){
           this.$store.commit('chooseEvent', item);
@@ -74,5 +82,10 @@
     margin-bottom: 1rem;
     margin-top: 0;
     font-size: 1rem;
+  }
+  #soldout {
+    background: red;
+    color: white;
+    padding: 2px;
   }
 </style>

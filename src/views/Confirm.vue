@@ -9,7 +9,8 @@
           <h4>{{ activeEvent.when.date }} {{ activeEvent.when.year }}</h4>
           <p>{{ activeEvent.where.place }}</p>
           <p>{{ activeEvent.where.city }}</p><br>
-          <p>Tickets remaining: {{ activeEvent.tickets.available - activeEvent.tickets.sold }}</p>
+          <p v-show="!show">Tickets remaining: {{ activeEvent.tickets.available - activeEvent.tickets.sold }}</p>
+          <p id="soldout" v-show="show">SOLD OUT!</p>
         </section>
       </article>
       <article class="grid-container">
@@ -39,8 +40,12 @@ export default {
     },
     counter(){
       return this.$store.state.counter;
-
-    }
+    },
+    show(){
+    if(this.activeEvent.tickets.available-this.activeEvent.tickets.sold==0){
+    return true
+  } else {return false}
+}
   },
   methods: {
     buy(){
@@ -122,6 +127,11 @@ h4 {
 
 p {
   margin: 0;
-  font-style: italic;
+}
+
+#soldout {
+  color: red;
+  font-weight: bold;
+  font-size: 2rem;
 }
 </style>

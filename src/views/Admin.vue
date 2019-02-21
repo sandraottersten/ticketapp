@@ -34,6 +34,7 @@
         <input type="number" name="year" placeholder="Year" v-model="newEvent.when.year">
         <input type="text" name="start" placeholder="From" v-model="newEvent.when.from">
         <input type="text" name="stop" placeholder="To" v-model="newEvent.when.to">
+        <input type="number" name="price" placeholder="Price" v-model="newEvent.price">
         <input type="number" name="tickets" placeholder="Tickets" v-model="newEvent.tickets.available">
       </section>
       <a href="#" class="btn" @click="createEvent">Add the event</a>
@@ -55,8 +56,8 @@
         when: {
           year: Number,
           date: "",
-          from: "",
-          to: ""
+          start: "",
+          end: ""
         },
         price: Number,
         tickets: {
