@@ -37,9 +37,7 @@
         <input type="number" name="tickets" placeholder="Tickets" v-model="newEvent.tickets.available">
       </section>
       <a href="#" class="btn" @click="createEvent">Add the event</a>
-
     </article>
-
   </main>
 </template>
 

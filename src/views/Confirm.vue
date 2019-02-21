@@ -8,7 +8,8 @@
           <h2>{{activeEvent.name}}</h2>
           <h4>{{ activeEvent.when.date }} {{ activeEvent.when.year }}</h4>
           <p>{{ activeEvent.where.place }}</p>
-          <p>{{ activeEvent.where.city }}</p>
+          <p>{{ activeEvent.where.city }}</p><br>
+          <p>Tickets remaining: {{ activeEvent.tickets.available - activeEvent.tickets.sold }}</p>
         </section>
       </article>
       <article class="grid-container">
@@ -47,7 +48,7 @@ export default {
       this.$router.push('/tickets');
     },
     addNumber(number){
-      this.$store.commit('addNumber', number);
+      this.$store.dispatch('addNumber', number);
     },
     removeNumber(number){
       this.$store.dispatch('removeNumber', number);

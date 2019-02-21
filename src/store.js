@@ -56,6 +56,12 @@ actions: {
     if(this.state.counter>1){
       ctx.commit('setNumber', number);
     }
+  },
+  addNumber(ctx, number){
+    let sum = this.state.activeEvent.tickets.available-this.state.activeEvent.tickets.sold
+    if(this.state.counter>=1 && sum>this.state.counter){
+      ctx.commit('addNumber', number);
+    }
   }
 }
 })

@@ -24,7 +24,7 @@
           this.$router.push('/confirm')
         }
       }
-        }
+    }
 </script>
 
 <style scoped>
@@ -75,8 +75,4 @@
     margin-top: 0;
     font-size: 1rem;
   }
-
-
-
-
 </style>
