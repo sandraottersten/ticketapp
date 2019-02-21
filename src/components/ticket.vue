@@ -2,6 +2,7 @@
   <main id="ticket">
     <section class="grid-container">
         <section class="item1">
+          <p>EVENT</p>
           <h1>{{ticket.event.name}}</h1>
         </section>
         <section class="item2">
@@ -37,7 +38,8 @@
 
 <style scoped>
   #ticket {
-    margin: 2rem;
+  width: 100%;
+  height: 100%;
   }
 .item1 { grid-area: name; }
 .item2 { grid-area: where; }
@@ -57,12 +59,14 @@
   'barcode barcode barcode barcode barcode barcode';
 grid-gap: 2px;
   padding: 2px;
+    width: 400px;
 }
 
 .grid-container > section {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px 0;
+
 }
 .utfcode {
     margin: -1.5rem 0 0 0;
@@ -81,7 +85,7 @@ grid-gap: 2px;
 }
 h1 {
     margin: 0;
-    padding: 0 0 1rem 1rem;
+    padding: 0 0 1rem 0;
     font-size: 2rem;
     text-transform: uppercase;
   }

@@ -1,6 +1,8 @@
 <template>
   <main class="tickets">
+    <section class="container">
       <ticket class="tick" v-for="(ticket, index) in tickets" :key="index" :ticket="ticket" />
+    </section>
   </main>
 </template>
 
@@ -27,21 +29,27 @@ export default {
 </script>
 
 <style scoped>
-#app {
+
+.tickets {
+  display: flex;
+  align-items: center;
+  height: 100%;
 
 }
- .tickets {
-   display: flex;
-   padding-top: 3rem;
-   overflow-x: scroll;
-   align-items: center;
- }
+.container {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
  body {
    margin: 0;
  }
  .tick {
-   min-width: 21rem;
-   width: 100vw;
+   scroll-snap-align: start;
+   text-align: center;
+   display: flex;
+   width: 400px;
+   height: 100%;
  }
 
 </style>

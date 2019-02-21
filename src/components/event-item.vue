@@ -81,7 +81,7 @@
     text-transform: uppercase;
     margin-bottom: 1rem;
     margin-top: 0;
-    font-size: 1rem;
+    font-size: .9rem;
   }
   #soldout {
     background: red;
