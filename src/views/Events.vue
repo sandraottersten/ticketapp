@@ -52,24 +52,26 @@ export default {
     outline: none;
   }
   #event {
-    background-color: white;
     display: flex;
     flex-direction: column;
     height: 100vh;
   }
   .event {
-    margin: 0 20px;
+    margin: 0;
   }
   .scrolling-box {
     display: block;
     overflow-y: scroll;
     height: 510px;
+    background-color: white;
+    width: 100vw;
+
   }
   header {
     background-color: rgb(254, 113, 33);
   }
   #input {
-    background-color: lightgray;
+    background: rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;

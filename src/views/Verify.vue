@@ -11,8 +11,8 @@
             <img v-if="verify==true" src="../assets/thumbsup.png" alt="thumb up">
             <img v-if="verify==false" src="../assets/thumbsdown.png" alt="thumb up">
         </section>
-        <div class="hej">
-          <input type="text" name="code" placeholder="Write code here":value="code.toUpperCase()" @input="code = $event.target.value.toUpperCase()" :maxlength="codeLength" />
+        <div>
+          <input type="text" name="code" placeholder="Write code here" :value="code.toUpperCase()" @input="code = $event.target.value.toUpperCase()" :maxlength="codeLength" />
           <a href="#" class="btn" @click="verifyTicket">Verify code</a>
         </div>
      </section>
@@ -56,6 +56,8 @@ export default {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background: rgba(255, 255, 255, 0.5);
+
   }
   header {
     flex: 1;

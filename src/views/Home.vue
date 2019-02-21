@@ -1,7 +1,7 @@
 <template>
   <main id="home">
     <section class="content">
-        <img src="../assets/blogo.png" alt="Where its @" @click="$router.push('/events')">
+        <img src="../assets/blogo.png" alt="Bthere" @click="$router.push('/events')">
         <h1>BTHERE</h1>
         <h4>ticketing made easy</h4>
     </section>

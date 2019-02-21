@@ -5,7 +5,6 @@
     </section>
     <section class='section'>
       <h3>{{item.name}} <span id="soldout" v-show="show">SOLD OUT!</span></h3>
-
       <p id="normal-text">{{item.where.place}} - {{item.where.city}}</p>
       <p>{{item.when.start}} - {{item.when.end}}</p>
     </section>

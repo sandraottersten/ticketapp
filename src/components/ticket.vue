@@ -2,7 +2,7 @@
   <main id="ticket">
     <section class="grid-container">
         <section class="item1">
-          <p>EVENT</p>
+          <img src="../assets/blogo.png" alt="Bthere" @click="$router.push('/events')">
           <h1>{{ticket.event.name}}</h1>
         </section>
         <section class="item2">
@@ -10,13 +10,13 @@
           <h3>{{ticket.event.where.city}}</h3>
         </section>
         <section class="item3">
-          <p>{{ticket.event.when.date}}</p>
+          <p>Day<br>{{ticket.event.when.date}}</p>
         </section>
         <section class="item4">
-          <p>{{ticket.event.when.start}}</p>
+          <p>From<br>{{ticket.event.when.start}}</p>
         </section>
         <section class="item5">
-          <p>{{ticket.event.when.end}}</p>
+          <p>To<br>{{ticket.event.when.end}}</p>
         </section>
         <section class="item6">
           <p>{{ticket.event.info}}</p>
@@ -41,13 +41,34 @@
   width: 100%;
   height: 100%;
   }
-.item1 { grid-area: name; }
-.item2 { grid-area: where; }
-.item3 { grid-area: date; }
-.item4 { grid-area: to; }
-.item5 { grid-area: from; }
-.item6 { grid-area: info; }
-.item7 { grid-area: barcode; }
+.item1 {
+  grid-area: name;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.item2 {
+  grid-area: where;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.item3 {
+  grid-area: date;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.item4 {
+  grid-area: to;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.item5 {
+  grid-area: from;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.item6 {
+  grid-area: info;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.item7 {
+  grid-area: barcode;
+  background-color: rgba(255, 255, 255, 1);
+}
 
 .grid-container {
   display: grid;
@@ -63,7 +84,6 @@ grid-gap: 2px;
 }
 
 .grid-container > section {
-  background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px 0;
 
@@ -91,5 +111,9 @@ h1 {
   }
 h3 {
   margin: 5px;
+}
+img {
+  width: 20%;
+  margin-bottom: 10px;
 }
 </style>
