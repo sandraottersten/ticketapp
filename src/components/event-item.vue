@@ -83,7 +83,7 @@
     font-size: .9rem;
   }
   #soldout {
-    background: red;
+    background: rgb(251, 78, 60);
     color: white;
     padding: 2px;
   }

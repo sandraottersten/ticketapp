@@ -67,7 +67,6 @@ export default {
 #confirm {
   display: flex;
   flex-direction: column;
-  background-color: white;
   height: 100vh;
   justify-content: flex-end;
 }
@@ -78,6 +77,8 @@ export default {
   background-color: white;
   flex-direction: column;
   flex:1;
+  background-color: white;
+
 }
 
 .price { grid-area: price; }
@@ -91,7 +92,7 @@ export default {
   'price price price price price price'
   'left left number number right right';
   grid-gap: 2px;
-  margin: 30px 0px 0px;
+  margin: 0px;
   background-image: url('../assets/background.jpg');
   background-size: 100%;
   text-align: center;
@@ -104,7 +105,6 @@ export default {
 }
 
 header {
-  background-color: rgb(254, 113, 33);
 }
 
 h1 {

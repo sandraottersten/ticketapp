@@ -115,7 +115,6 @@
     border-bottom: 1px solid black;
   }
   .addevent {
-    background: rgba(255, 255, 255, 0.5);
     background-size: 100%;
     font-family: 'Montserrat', sans-serif;
     padding: 0 20px;
@@ -138,6 +137,7 @@
     padding-bottom: 10px;
     margin-bottom: 2rem;
     text-align: center;
+    width: 80%;
   }
 
   input {
@@ -149,7 +149,6 @@
     padding: 10px;
   }
   h1 {
-    background-color: rgb(254, 113, 33);
     padding: 30px;
     margin: 0;
   }

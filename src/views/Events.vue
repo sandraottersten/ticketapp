@@ -63,12 +63,9 @@ export default {
     display: block;
     overflow-y: scroll;
     height: 510px;
-    background-color: white;
+    background: rgb(255, 255, 255);
     width: 100vw;
 
-  }
-  header {
-    background-color: rgb(254, 113, 33);
   }
   #input {
     background: rgba(255, 255, 255, 0.5);
