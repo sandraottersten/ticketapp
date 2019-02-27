@@ -13,7 +13,7 @@
           <p id="soldout" v-show="show">SOLD OUT!</p>
         </section>
       </article>
-      <article class="grid-container">
+      <article v-show="!show" class="grid-container">
         <section class="price">
           {{ this.activeEvent.price * this.counter }}:-
         </section>
@@ -27,7 +27,8 @@
           +
         </section>
         </article>
-        <a href="#" class="btn" @click="buy">Take my money</a>
+        <a href="#" v-show="!show" class="btn" @click="buy">Take my money</a>
+        <a href="#" v-show="show" class="btn" @click="$router.push('/events');">Back to events</a>
   </main>
 </template>
 
